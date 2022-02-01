@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Animal {
+        sex;
+        constructor(props) {
+          this.sex = props.sex;
+        }
+      }
+      class Human extends Animal {
+        name;
+        age;
+        constructor(props) {
+          super(props);
+          this.name = props.name;
+          this.age = props.age;
+        }
+      }
+
+      const person = new Human({
+        name: "Louise",
+        age: 22,
+        sex: "female",
+      });
+
+      const person2 = {
+        name: "Louise Anna",
+        age: 22,
+        sex: "female",
+        contact: {
+          foo: {
+            bar: {
+              email: "teste@teste",
+            },
+          },
+        },
+      };
+
+      ///////// 1
+      // const { name, age, contact: { foo: { bar: email }} } = person2;
+      // const { name: nome  } = person2;
+      
+      // ////////// 2
+
+      // const fruits = ['banana', 'morango', 'manga']
+      
+      // const [first,second] = fruits
+      
+      // const [,,secs] = fruits
+
+      /////////// 3
+      // const per = {
+      //   name: "Louise Anna",
+      //   age: 22
+      // }
+      //  const per2 = {
+      //   name: "Beth White",
+      //   age: 19
+      // } 
+      // const per3 = {
+      //   name: "Clarice Jane",
+      //   age: 32
+      // }
+      // const friends = [per, per2, per3]
+
+      // const [, ,{ name } ] = friends
+
+
+      // /////// 4
+      // const chart = [[1,2],[3,4],[5,6],[7,8]]
+
+      // const [, [,y]] = chart
+      // /// saída:  y = 4
+
+        function createUser( {name, age, email} ){
+          return {
+            name,
+            age,
+            contact:{ email }
+          }
+        }
+
+        const {contact:{email}} = createUser('Barth', 22, 'barth@email.com')
+
+
+        const useer = createUser({
+          name: 'Lucas',
+          age: 23,
+          email:'teste@teste'
+        }) 
+
+
+
+
+    </script>
+  </body>
+</html>
