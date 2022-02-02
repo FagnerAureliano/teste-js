@@ -76,6 +76,8 @@
       // const [, [,y]] = chart
       // /// saída:  y = 4
 
+
+      //////////// 6
         function createUser( {name, age, email} ){
           return {
             name,
@@ -93,8 +95,22 @@
           email:'teste@teste'
         }) 
 
+        const parts = ['ombro', 'joelho']
+        const sentence = ['cabeça' , ...parts, 'pés']
 
 
+        ///////////// 7
+        function createUser2( name, age, ...contacts){
+          return {
+            name,
+            age,
+            contacts
+          }
+        }
+        const imutableArray = ['select ','*', ' from', ' post']
+        const mutableArray = [ ...imutableArray]
+        mutableArray.push(' where id = 1')
+        
 
     </script>
   </body>
