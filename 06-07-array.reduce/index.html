@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array.reduce</title>
+  </head>
+  <body>
+    <script>
+      const studants = [
+        { name: "Jerry", grade: 9 },
+        { name: "Louise", grade: 2 },
+        { name: "Jane", grade: 10 },
+        { name: "Jeff", grade: 4 },
+        { name: "Suzzy", grade: 6 },
+      ];
+
+      // let totalGrade = 0
+      // studants.forEach(pupil => totalGrade += pupil.grade)
+
+      const totalGrade = studants.reduce(
+          (prev, curr) => {
+              console.log(prev)
+              console.log(curr)
+              return prev + curr.grade
+          }, 0);
+          console.log(totalGrade)
+    </script>
+  </body>
+</html>
