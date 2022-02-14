@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>Array.some - Array.every</title>
+</head>
+<body>
+    <script>
+         const guests = [
+        { name: "Jerry", age: 17 },
+        { name: "Louise", age: 21 },
+        { name: "Jane", age: 20 },
+        { name: "Jeff", age: 14 },
+        { name: "Suzzy", age: 61 },
+      ];
+//Se há algum adulto
+    const hasAdult = guests.some( guest => guest.age>18 )
+    //Se todos são adultos
+    const everyoneIsAnAdult = guests.every( guest => guest.age>10 )
+
+    </script>
+</body>
+</html>
