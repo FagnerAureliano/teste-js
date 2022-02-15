@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>Criando Promise com then e catch</title>
+</head>
+<body>
+    <script>
+        function handleClick(){
+            return new Promise((resolve,reject)=> {
+                setTimeout(() => {
+                    // resolve(123)
+                    reject(123)
+                }, 5000);
+            })
+        }
+        const teste = handleClick()
+        .then(res=>{
+            console.log(123 === res)
+            console.log('finalizou')
+            return res
+        })
+        .catch(err=>{
+            console.log("Houve um erro")
+            console.log(err)
+        })
+
+    </script>
+</body>
+</html>
