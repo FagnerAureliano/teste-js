@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Promise chaining</title>
+    <title>Múltiplas promises em paralelo com Promise.all</title>
   </head>
   <body>
     <script>
-      fetch("https://jsonplaceholder.typicode.com/todos/1").then(
-        async (res) => {
-          const data = await res.json();
-          console.log(data);
-        }
-      );
-      console.log(data);
+      const baseUrl = "https://jsonplaceholder.typicode.com";
+
+      async function getTodos() {
+        const promises = Promise.all([
+          fetch(`${baseUrl}/todos/1`).then((res) => res.json()),
+          fetch(`${baseUrl}/todos/2`).then((res) => res.json()),
+          fetch(`${baseUrl}/todos/3`).then((res) => res.json()),
+        ]);
+
+        return promises;
+      }
+
+      const todos = getTodos();
     </script>
   </body>
 </html>
